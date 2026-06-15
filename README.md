@@ -1,1 +1,1 @@
-# simulador-cajero-autom-tico
+# simulador-cajero-automtico
