@@ -1,41 +1,34 @@
-# historial = ["Depósito: $1000", "Extracción: $500", "Transferencia a M: $200"]  #esto es de ejemplo para ver si podia usarlo en el pto 5 q me muestre los elementos de la lista, pero no se si es correcto o no, lo deje para probarlo y ver si funciona, si no lo borro despues
+import Registro
+import Login
 
-perfiles_exitentes = {  "usuario1": {                           #esto si el usuario exites y se logea directamente
-                            "contraseña": 1234,
-                            "saldo": 1000,
-                            "historial": ["Depósito inicial: $1000"]
-                                    },
-                        "usuario2": {
-                            "contraseña": 5678,
-                            "saldo": 2000,
-                            "historial": ["Depósito inicial: $2000"]
-                        },
-                         "usuario3": {
-                            "contraseña": 2026,
-                            "saldo": 3000,
-                            "historial": ["Depósito inicial: $3000"]
-                        }}
+#menu de incio de login y registro
+while True:
+    print("BIENVENIDO AL CAJERO AUTOMÁTICO")
+    print("1. Iniciar sesión")
+    print("2. Registrarse")
+    print("3. Salir")
+    opcion = input ("Ingrese un numero para realizar una accion ")
+    print("Elegiste la opción:", opcion)
+
+    if opcion == "1":
+        Login.login()
+        break
+    elif opcion == "2":
+        Registro.registro()
+        break
+    elif opcion == "3":
+        print("Adios")
+        break
+    else:
+        print("Opción no válida, por favor ingrese un número del 1 al 3")
+        
 
 
-#si se registra un nuevo usario, se le asigna un nuevo perfil con su contraseña y saldo inicial de 0
 
-nuevo_usuario = input("Ingrese un nuevo nombre de usuario para registrarse: ")
-nueva_contrasena = input("Ingrese una nueva contraseña para registrarse: ")
-perfiles_nuevo_usuario = {nuevo_usuario: {
-                        "contraseña": nueva_contrasena,
-                        "saldo": 0,
-                        "historial": []
-}
-}
 
-#esto es para verificar si el nuevo usuario ya existe en los perfiles existentes, si es asi, se le da la bienvenida, sino se le dice que el usuario o contraseña son incorrectos. Es prueba esto
-if nuevo_usuario in perfiles_exitentes and perfiles_exitentes[nuevo_usuario]["contraseña"] == nueva_contrasena:
-    print("Bienvenido de nuevo, ", nuevo_usuario)
-else:
-   
-    print("Usuario o contraseña incorrectos, por favor intente nuevamente o regístrese si no tiene una cuenta.")
 
-while True:  #bucle principal del programa, se repetirá hasta que el usuario decida salir
+
+while opcion == "1" or opcion=="2":  #bucle principal del programa, se repetirá hasta que el usuario decida salir
 
     print("BIENVENIDO AL CAJERO AUTOMÁTICO")
     print("1. Consultar saldo")
