@@ -38,8 +38,8 @@ def login():
         
             if input_contraseña == perfiles_existentes[input_usuario]["contraseña"]:
                 print("Inicio de sesión exitoso. Bienvenido, " + input_usuario + "!")
-                print("Tu saldo actual es: $" + str(perfiles_existentes[input_usuario]["saldo"]))
-                print("Tu historial de transacciones es: " + str(perfiles_existentes[input_usuario]["historial"]))
+                    # print("Tu saldo actual es: $" + str(perfiles_existentes[input_usuario]["saldo"]))
+                    # print("Tu historial de transacciones es: " + str(perfiles_existentes[input_usuario]["historial"]))
                 return input_usuario
             else:
                 print("Contraseña incorrecta. Por favor, intente de nuevo.")
@@ -56,8 +56,8 @@ def login():
             
             if input_contraseña == perfiles_nuevos[input_usuario]["contraseña"]:
                 print("Inicio de sesión exitoso. Bienvenido, " + input_usuario + "!")
-                print("Tu saldo actual es: $" + str(perfiles_nuevos[input_usuario]["saldo"]))
-                print("Tu historial de transacciones es: " + str(perfiles_nuevos[input_usuario]["historial"]))
+                # print("Tu saldo actual es: $" + str(perfiles_nuevos[input_usuario]["saldo"]))
+                # print("Tu historial de transacciones es: " + str(perfiles_nuevos[input_usuario]["historial"]))
                 return input_usuario
             else:
                 print("Contraseña incorrecta. Por favor, intente de nuevo.")
