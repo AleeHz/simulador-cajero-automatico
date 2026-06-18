@@ -7,7 +7,7 @@ while True:
     print("1. Iniciar sesión")
     print("2. Registrarse")
     print("3. Salir")
-    opcion = input ("Ingrese un numero para realizar una accion ")
+    opcion = input("Ingrese un numero para realizar una accion ")
     print("Elegiste la opción:", opcion)
 
     if opcion == "1":
@@ -15,7 +15,7 @@ while True:
         break
     elif opcion == "2":
         Registro.registro()
-        break
+        # break
     elif opcion == "3":
         print("Adios")
         break
@@ -28,7 +28,11 @@ while True:
 
 
 
-while opcion == "1" or opcion=="2":  #bucle principal del programa, se repetirá hasta que el usuario decida salir
+while True:  #bucle principal del programa, se repetirá hasta que el usuario decida salir
+    
+    if opcion == "3":
+        print("Gracias por usar el cajero automático, vuelva pronto")
+        break
 
     print("BIENVENIDO AL CAJERO AUTOMÁTICO")
     print("1. Consultar saldo")
