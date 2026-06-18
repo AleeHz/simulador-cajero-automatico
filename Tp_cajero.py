@@ -11,8 +11,13 @@ while True:
     print("Elegiste la opción:", opcion)
 
     if opcion == "1":
-        Login.login()
+        while True:
+            usuario_actual = Login.login()
+            if usuario_actual != False:
+                print("Has iniciado sesión correctamente, ahora puedes acceder a las opciones del cajero automático.")
+                break
         break
+        
     elif opcion == "2":
         Registro.registro()
         # break
@@ -47,7 +52,11 @@ while True:  #bucle principal del programa, se repetirá hasta que el usuario de
 
     if opcion == "1":
         print("Elegiste consultar saldo")
-     
+        if usuario_actual in Login.perfiles_existentes.keys():
+            saldo = Login.perfiles_existentes[usuario_actual]["saldo"]
+        else:
+            saldo = Login.perfiles_nuevos[usuario_actual]["saldo"]
+        print("Tu saldo actual es: $" + str(saldo))
     
     elif opcion == "2":
         print("Elegiste depositar") 
@@ -66,8 +75,10 @@ while True:  #bucle principal del programa, se repetirá hasta que el usuario de
 
     elif opcion == "5":
         print("Elegiste ver historial")
-        # for movimiento in historial:
-        #     print("-", movimiento)
+        if usuario_actual in Login.perfiles_existentes.keys():
+            historial = Login.perfiles_existentes[usuario_actual]["historial"]
+        else:
+            historial = Login.perfiles_nuevos[usuario_actual]["historial"]
         print("Fin del historial")
         print("------------------------------------------------")
 

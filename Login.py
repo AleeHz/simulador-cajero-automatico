@@ -30,40 +30,44 @@ def login():
         print("El usuario no existe. Por favor, intente de nuevo.")
         input_usuario = input("Ingrese su nombre de usuario: ")
 
-    input_contraseña = input("Ingrese su contraseña: ").strip()
+    
 
-    while contador_intentos< 3:    
-        if input_usuario in perfiles_existentes.keys():
+    if input_usuario in perfiles_existentes.keys():
+        while contador_intentos< 3:   
+            input_contraseña = int(input("Ingrese su contraseña: ").strip()) 
+        
             if input_contraseña == perfiles_existentes[input_usuario]["contraseña"]:
+                print("Inicio de sesión exitoso. Bienvenido, " + input_usuario + "!")
                 print("Tu saldo actual es: $" + str(perfiles_existentes[input_usuario]["saldo"]))
                 print("Tu historial de transacciones es: " + str(perfiles_existentes[input_usuario]["historial"]))
-                contador_intentos = 0
+                return input_usuario
+            else:
+                print("Contraseña incorrecta. Por favor, intente de nuevo.")
+                contador_intentos += 1
+            if contador_intentos == 3:
+                print("Has excedido el número máximo de intentos. Por favor, inténtalo de nuevo más tarde.")
                 break
-        else:
-            print("Contraseña incorrecta. Por favor, intente de nuevo.")
-            contador_intentos += 1
-        if contador_intentos == 3:
-             break
             
     
        
-    if input_usuario in perfiles_nuevos.keys():
+    elif input_usuario in perfiles_nuevos.keys():
         while contador_intentos < 3: 
+            input_contraseña = input("Ingrese su contraseña: ").strip() 
             
             if input_contraseña == perfiles_nuevos[input_usuario]["contraseña"]:
                 print("Inicio de sesión exitoso. Bienvenido, " + input_usuario + "!")
                 print("Tu saldo actual es: $" + str(perfiles_nuevos[input_usuario]["saldo"]))
                 print("Tu historial de transacciones es: " + str(perfiles_nuevos[input_usuario]["historial"]))
-                contador_intentos = 0
+                return input_usuario
             else:
                 print("Contraseña incorrecta. Por favor, intente de nuevo.")
                 contador_intentos += 1
             if contador_intentos == 3:
                     print("Has excedido el número máximo de intentos. Por favor, inténtalo de nuevo más tarde.")
-                    return
+                    return False
     else:
         print("El usuario no existe. Por favor, intente de nuevo.")
-    return
+    return False
 
 
 
