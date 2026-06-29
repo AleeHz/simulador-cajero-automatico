@@ -3,6 +3,12 @@ import Login
 def registro():
     print("Bienvenido al sistema de registro de usuarios.")
     input_usuario = input("Ingrese su nombre: ")
+
+    if input_usuario in Login.base_usuarios:
+        print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
+        return 
+
+
     input_contraseña = input("Ingrese su clave: ")
     Confirmar_clave = input("Confirme su clave: ")
 
@@ -16,9 +22,9 @@ def registro():
 
     if input_contraseña == Confirmar_clave:
         print("Registro exitoso. Bienvenido, " + input_usuario + "!")
-        Login.perfiles_nuevos[input_usuario]={"contraseña": input_contraseña, "saldo": 0, "historial": []}
+        Login.base_usuarios[input_usuario]={"contraseña": input_contraseña, "saldo": 0, "historial": []}
         
-        return Login.perfiles_nuevos
+        return Login.base_usuarios
         
   
 
