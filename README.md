@@ -1,11 +1,10 @@
 # simulador-cajero-automtico
 
 
-*Integrantes del grupo:* 
-
+*Integrantes del grupo B18:*
 Santillan Gonzalo Emmanuel
 
-Hernandez Jose  Alejandro 
+Hernandez Alejandro Jose 
 
 
 *Comision:* 1.2 
