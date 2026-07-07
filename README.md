@@ -13,11 +13,6 @@ Hernandez Jose  Alejandro
 
 *Descripcion general del sistema*
 
-<!-- las estructuras utilizadas;
-las validaciones realizadas;
-el manejo de errores;
-y el funcionamiento general del sistema. -->
-
 ejecutamos el programa seguido a ello se ingresa a un bucle  donde se muestra por pantalla 3 opciones del menu de inicio las cuales son: 
 
 1. Iniciar sesion
